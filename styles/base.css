@@ -1,5 +1,5 @@
 /* base.css - Main styling for WDD 131 Dynamic Web Fundamentals */
-/* FIXED: WCAG compliant contrast ratios (all 4.5:1 or higher) */
+
 
 /* CSS Reset & Base */
 * {
@@ -38,7 +38,7 @@ body {
   backdrop-filter: blur(2px);
 }
 
-/* ========== HEADER - FIXED CONTRAST ========== */
+/* ========== HEADER  ========== */
 header {
   background: linear-gradient(135deg, var(--primary-color), #1a472a);
   border-radius: 20px;
@@ -47,15 +47,15 @@ header {
   box-shadow: var(--card-shadow);
 }
 
-/* FIXED: #course-title - now has proper contrast */
-/* Changed from translucent background to solid dark with white text */
+
+
 #course-title {
   display: block;
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
-  /* FIXED: White text on solid dark green background (contrast ~12:1) */
+ 
   color: #ffffff;
   background: #1a3a1a; /* Solid dark green */
   text-shadow: none;
@@ -65,20 +65,7 @@ header {
   border-radius: 60px;
 }
 
-/* Alternative lighter version (if you prefer light background):
-#course-title {
-  display: block;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a3a1a;
-  background: #fefae0;
-  margin-bottom: 1.5rem;
-  font-family: 'Lora', serif;
-  padding: 0.75rem;
-  border-radius: 60px;
-}
-*/
+
 
 /* Navigation - Flexbox menu with hover effect */
 nav {
@@ -93,13 +80,13 @@ nav {
   flex-wrap: wrap;
 }
 
-/* FIXED: Navigation links - solid background for 12:1 contrast */
+
 .nav-links li a {
   text-decoration: none;
   font-weight: 600;
   font-size: 1.1rem;
   padding: 0.6rem 1.4rem;
-  /* FIXED: Solid dark green instead of translucent */
+  /*  Solid dark green instead of translucent */
   background: #1a3a1a;
   color: #ffffff;
   border-radius: 40px;
@@ -166,7 +153,7 @@ h1 {
   box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
 }
 
-/* FIXED: Card heading - dark text on light background */
+
 .card h2 {
   background: #f5e6d3; /* Lighter terracotta for better contrast */
   color: #1a3a1a; /* Dark green text instead of #2d2a24 */
@@ -190,7 +177,7 @@ h1 {
   min-width: 200px;
 }
 
-/* FIXED: Body text - ensure dark enough */
+
 .bio-text p {
   margin-bottom: 1rem;
   font-size: 0.98rem;
@@ -212,7 +199,7 @@ h1 {
   border-color: var(--primary-color);
 }
 
-/* FIXED: Figcaption - darker for contrast */
+
 .flag-figure figcaption {
   font-size: 0.75rem;
   color: #4a4842; /* Darker than #5e5b56 */
@@ -249,7 +236,7 @@ h1 {
   padding: 1.5rem;
 }
 
-/* FIXED: Headers in second card - ensure good contrast */
+
 .nigeria-info h3, .web-resources h3 {
   color: #1a3a1a; /* Dark green instead of var(--primary-color) for better contrast */
   font-size: 1.4rem;
@@ -259,7 +246,7 @@ h1 {
   padding-left: 0.8rem;
 }
 
-/* FIXED: Paragraph text - darker for contrast */
+/*  Paragraph text - darker for contrast */
 .nigeria-info p {
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -295,7 +282,7 @@ h1 {
   margin-top: 0.75rem;
 }
 
-/* FIXED: Resource links - better contrast with border */
+/* Resource links - better contrast with border */
 .resource-list li a {
   text-decoration: none;
   color: #1a3a1a; /* Darker green for contrast */
@@ -318,7 +305,7 @@ h1 {
   border-color: #1a3a1a;
 }
 
-/* ========== FOOTER - Already had good contrast ========== */
+/* ========== FOOTER ========== */
 footer {
   margin-top: 3rem;
   background: var(--dark-bg);
