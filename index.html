@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDD 131 – Dynamic Web Fundamentals – Frederick Atabo</title>
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Frederick Atabo. Homepage showcasing Frederick,  background in Nigeria, web dev resources, and dynamic JavaScript elements.">
+  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals - Frederick Atabo. Homepage showcasing Frederick, background in Nigeria, web dev resources, and dynamic JavaScript elements.">
   <meta name="author" content="Frederick Atabo">
   <meta name="color-scheme" content="light">
-  <!-- Google Fonts API: Poppins + Lora for elegant readability -->
+  
+  <!-- Google Fonts - ADDED preconnect links for performance (NO @import) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
   <!-- External CSS -->
   <link rel="stylesheet" href="styles/base.css">
+  
   <!-- JavaScript with defer for safe DOM access -->
   <script src="scripts/getdates.js" defer></script>
 </head>
@@ -38,12 +43,10 @@
           <h2>About Me</h2>
           <div class="card-content">
             <div class="bio-text">
-              <p>My name is Frederick Atabo, I am a freelance  web/backend laravel developer. I was born 
-                in Nigeria and I live in Abuja with my family.
-              </p>
+              <p>My name is Frederick Atabo, I am a freelance web/backend Laravel developer. I was born in Nigeria and I live in Abuja with my family.</p>
               <figure class="flag-figure">
                 <img src="images/flag.png" alt="Nigeria flag symbolic icon" width="280" height="180" loading="lazy">
-                <figcaption>Nigeria — rich in agriculture and Mineral resources, unique heritage</figcaption>
+                <figcaption>Nigeria — rich in agriculture and mineral resources, unique heritage</figcaption>
               </figure>
             </div>
             <div class="photo-wrapper">
@@ -52,16 +55,12 @@
           </div>
         </section>
 
-       
         <section class="card resources-card">
           <h2>Nigeria & Web Dev</h2>
           <div class="country-highlight">
             <div class="nigeria-info">
               <h3>Abuja, Nigeria</h3>
-              <p>Nigeria is the most populous country in Africa and is located in West Africa along the Gulf of Guinea. 
-                It is home to hundreds of ethnic groups and over 500 languages, making it one of the most culturally diverse nations in the world. The country is best known for its rich oil reserves, vibrant music and film industries such as Nollywood, and 
-                natural attractions like Zuma Rock and Yankari National Park.
-              </p>
+              <p>Nigeria is the most populous country in Africa and is located in West Africa along the Gulf of Guinea. It is home to hundreds of ethnic groups and over 500 languages, making it one of the most culturally diverse nations in the world. The country is best known for its rich oil reserves, vibrant music and film industries such as Nollywood, and natural attractions like Zuma Rock and Yankari National Park.</p>
               <img src="images/benin-bronze-art.png" alt="Benin Bronze Art" class="nigeria-img" width="300" height="250" loading="lazy">
             </div>
             <div class="web-resources">
@@ -81,7 +80,7 @@
     </main>
 
     <footer>
-      <p>© <span id="currentyear"></span> 🌿 Frederick Atabo Nigeria</p>
+      <p>© <span id="currentyear"></span> 🌿 Frederick Atabo | Nigeria</p>
       <p id="lastModified">Last modification: loading...</p>
     </footer>
   </div>
