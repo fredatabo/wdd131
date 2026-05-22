@@ -58,11 +58,13 @@ header {
   50% { text-shadow: 0 0 20px var(--accent-gold); }
 }
 
-.logo h1 {
+/* Logo title - replaces the h1 that was here to fix W3C duplicate h1 error */
+.logo-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  color: var(--text-light);
 }
 
 /* Hamburger Menu Button */
