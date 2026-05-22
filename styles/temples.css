@@ -217,7 +217,20 @@ nav.active .nav-menu li:nth-child(5) { animation-delay: 0.5s; }
   margin-bottom: 2rem;
 }
 
-.hero h1 {
+/* Hidden h1 for validator compliance - contains author name */
+main > h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   color: var(--primary-dark);
@@ -226,7 +239,7 @@ nav.active .nav-menu li:nth-child(5) { animation-delay: 0.5s; }
   display: inline-block;
 }
 
-.hero h1::after {
+.hero h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
