@@ -1,0 +1,148 @@
+/* Large View CSS - Screens 769px and above */
+
+@media only screen and (min-width: 769px) {
+  
+  /* Hide hamburger button and overlay on large screens */
+  .hamburger {
+    display: none !important;
+  }
+  
+  .overlay {
+    display: none !important;
+  }
+  
+  /* Show navigation normally as horizontal bar */
+  nav {
+    position: relative;
+    right: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+  
+  nav.active {
+    right: auto !important;
+  }
+  
+  .nav-menu {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0.5rem 1rem !important;
+    gap: 0.5rem;
+  }
+  
+  .nav-menu li {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  
+  .nav-menu a {
+    padding: 0.8rem 1.2rem !important;
+    position: relative;
+  }
+  
+  .nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gold);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+  }
+  
+  .nav-menu a:hover::before {
+    width: 80%;
+  }
+  
+  .nav-menu a:hover {
+    padding-left: 1.2rem !important;
+    background: transparent !important;
+  }
+  
+  .nav-menu a.active {
+    background: transparent !important;
+    border-left: none !important;
+    border-bottom: 2px solid var(--accent-gold);
+  }
+  
+  /* Header layout for large screens */
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  header {
+    padding: 0.5rem 0;
+  }
+  
+  /* Hero section */
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  /* Gallery Grid - Desktop: 3 columns */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  figure img {
+    height: 280px;
+  }
+  
+  figcaption h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Footer */
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .footer-section {
+    flex: 1;
+  }
+  
+  .footer-section:first-child {
+    text-align: left;
+  }
+  
+  .footer-section:last-child {
+    text-align: right;
+  }
+  
+  .social {
+    justify-content: flex-end;
+  }
+}
+
+/* For very large screens (1200px+) */
+@media only screen and (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  main {
+    padding: 2rem 3rem;
+  }
+  
+  figure img {
+    height: 300px;
+  }
+}

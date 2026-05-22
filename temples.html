@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album - LDS Temple Gallery</title>
+  <meta name="description" content="A responsive gallery showcasing Latter-day Saint temples from around the world.">
+  <meta name="author" content="Frederick Atabo">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons (optional but enhances hamburger) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Files - Mobile First -->
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+  
+  <!-- JavaScript -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <i class="fas fa-church"></i>
+        <h1>Temple Album</h1>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <nav id="nav-menu">
+      <ul class="nav-menu">
+        <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+        <li><a href="#"><i class="fas fa-clock"></i> <span>Old</span></a></li>
+        <li><a href="#"><i class="fas fa-star"></i> <span>New</span></a></li>
+        <li><a href="#"><i class="fas fa-expand"></i> <span>Large</span></a></li>
+        <li><a href="#"><i class="fas fa-compress"></i> <span>Small</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Temple Gallery</h1>
+      <p>Exploring sacred spaces around the world</p>
+    </div>
+    
+    <div class="gallery">
+      <figure>
+        <img src="images/saltlake.png" alt="Salt Lake Temple" loading="lazy">
+        <figcaption>
+          <h3>Salt Lake Temple</h3>
+          <p>Salt Lake City, Utah</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/wash.png" alt="Washington D.C. Temple" loading="lazy">
+        <figcaption>
+          <h3>Washington D.C. Temple</h3>
+          <p>Kensington, Maryland</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/califo.png" alt="San Diego Temple" loading="lazy">
+        <figcaption>
+          <h3>San Diego Temple</h3>
+          <p>San Diego, California</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/rome.png" alt="Rome Italy Temple" loading="lazy">
+        <figcaption>
+          <h3>Rome Italy Temple</h3>
+          <p>Rome, Italy</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/hong.png" alt="Hong Kong China Temple" loading="lazy">
+        <figcaption>
+          <h3>Hong Kong Temple</h3>
+          <p>Kowloon, Hong Kong</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/paris.png" alt="Paris France Temple" loading="lazy">
+        <figcaption>
+          <h3>Paris France Temple</h3>
+          <p>Le Chesnay, France</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/brazil.png" alt="Rio de Janeiro Brazil Temple" loading="lazy">
+        <figcaption>
+          <h3>Rio de Janeiro Temple</h3>
+          <p>Rio de Janeiro, Brazil</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/london.png" alt="London England Temple" loading="lazy">
+        <figcaption>
+          <h3>London England Temple</h3>
+          <p>Surrey, England</p>
+        </figcaption>
+      </figure>
+      
+      <figure>
+        <img src="images/tokyo.png" alt="Tokyo Japan Temple" loading="lazy">
+        <figcaption>
+          <h3>Tokyo Japan Temple</h3>
+          <p>Tokyo, Japan</p>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-church"></i> Temple Album</h3>
+        <p>Celebrating sacred architecture</p>
+      </div>
+      <div class="footer-section">
+        <p>&copy; <span id="currentyear"></span> Frederick Atabo | Abuja, Nigeria</p>
+        <p id="lastModified"></p>
+      </div>
+      <div class="footer-section social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Overlay for mobile menu -->
+  <div class="overlay" id="overlay"></div>
+</body>
+</html>
