@@ -314,8 +314,8 @@ figcaption h3 {
 }
 
 figcaption p {
-  font-size: 0.85rem;
-  color: var(--accent-gold);
+   font-size: 0.85rem;
+  color: #b8860b; 
   font-weight: 600;
 }
 
