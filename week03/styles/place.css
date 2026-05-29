@@ -1,0 +1,285 @@
+/* ============================================================
+   GLOBAL CSS VARIABLES
+   ============================================================ */
+:root {
+  /* Madagascar flag colors */
+  --color-red:        #FC3D32;
+  --color-green:      #007A3D;
+  --color-white:      #FFFFFF;
+  --color-off-white:  #F5F0EB;
+  --color-dark:       #1A1A1A;
+  --color-text:       #2C2C2C;
+  --color-muted:      #555555;
+  --color-card-bg:    rgba(255, 255, 255, 0.88);
+  --color-card-border:rgba(0, 122, 61, 0.3);
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Lato', sans-serif;
+
+  /* Spacing */
+  --space-xs:  0.4rem;
+  --space-sm:  0.75rem;
+  --space-md:  1.25rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.18);
+  --shadow-header: 0 2px 8px rgba(0,0,0,0.25);
+
+  /* Radii */
+  --radius-card: 12px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-off-white);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: var(--shadow-header);
+  position: relative;
+  z-index: 10;
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+main {
+  flex: 1;
+}
+
+/* ============================================================
+   HERO IMAGE — MOBILE (stacked, full width)
+   ============================================================ */
+.hero {
+  display: block;
+  width: 100%;
+  line-height: 0;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ============================================================
+   INFO GRID — MOBILE (stacked cards below image)
+   ============================================================ */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-card);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(4px);
+}
+
+.card h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-green);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+/* ============================================================
+   DEFINITION LISTS (shared by Data & Weather)
+   ============================================================ */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-md);
+  font-size: 0.95rem;
+}
+
+dt {
+  font-weight: 700;
+  color: var(--color-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+dd {
+  color: var(--color-text);
+}
+
+/* ============================================================
+   WEATHER CARD – SVG ICON (mobile only)
+   ============================================================ */
+.weather-icon-mobile {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-sm) 0;
+}
+
+/* ============================================================
+   WEATHER HEADING – Desktop pseudo-element emoticon
+   ============================================================ */
+.weather-heading::after {
+  content: ' ⛅';
+  font-size: 1.3rem;
+}
+
+/* Hide the desktop pseudo-element on mobile (SVG shows instead) */
+@media (max-width: 767px) {
+  .weather-heading::after {
+    content: '';
+  }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-md) var(--space-lg);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ============================================================
+   MEDIA QUERY — DESKTOP (≥ 768px)
+   ============================================================ */
+@media (min-width: 768px) {
+
+  /* HERO: wide image fills behind the overlaid cards */
+  .hero {
+    position: relative;
+  }
+
+  .hero img {
+    max-height: 520px;
+    width: 100%;
+    object-position: center center;
+  }
+
+  /* Float the cards over the hero image */
+  .info-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0;
+    padding: var(--space-lg);
+    /* pointer-events pass through the empty middle */
+    pointer-events: none;
+  }
+
+  .card {
+    pointer-events: all;
+    max-width: 240px;
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  /* DATA card: left side */
+  .data-card {
+    align-self: flex-start;
+  }
+
+  /* WEATHER card: right side, vertically centered */
+  .weather-card {
+    align-self: center;
+  }
+
+  /* Hide SVG icon on desktop */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  /* Wrap hero + info-grid in a relative container */
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Make the picture element relatively positioned so cards sit over it */
+  .hero {
+    display: block;
+    position: relative;
+  }
+
+  /* dl font tweak for desktop */
+  dl {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   MEDIA QUERY — LARGE DESKTOP (≥ 1100px)
+   ============================================================ */
+@media (min-width: 1100px) {
+  .card {
+    max-width: 280px;
+    width: 280px;
+  }
+
+  .card h2 {
+    font-size: 1.7rem;
+  }
+
+  dl {
+    font-size: 1rem;
+  }
+}

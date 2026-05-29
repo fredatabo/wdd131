@@ -1,0 +1,69 @@
+body {
+	font-family: Roboto, helvetica, sans-serif;
+}
+
+header,
+main,
+footer {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
+/* REPLACED: marquee removed (deprecated), now using .banner */
+.banner {
+	padding: 1rem;
+	background-color: #eee;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+/* Old marquee rule removed - no longer needed */
+
+h1 {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* FIX: Two-column layout for main content */
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;  /* Creates two equal columns */
+	gap: 1.5rem;                     /* Adds space between columns */
+}
+
+/* FIX: h2 spans both columns (not centered, left-aligned) */
+h2 {
+	color: navy;
+	text-align: left;
+	grid-column: 1 / -1;  /* Spans from first to last column */
+	margin-top: 0;
+}
+
+article p {
+	text-align: justify;
+}
+
+/* FIX: Callout container - fixed padding AND contrast issues */
+.callout {
+	/* OLD colors removed (failed contrast: #777 on #702963 = 2.14 ratio) */
+	/* NEW high-contrast colors - passes WCAG AA and AAA */
+	background-color: #1a1a2e;     /* Very dark background */
+	color: #ffffff;                 /* White text for maximum contrast */
+	padding: 1.5rem;               /* Fixed padding issue (was 10px) */
+	grid-column: 1 / -1;           /* Spans full width below columns */
+	margin-top: 1rem;
+	border-radius: 8px;            /* Optional: nicer appearance */
+}
+
+/* Ensure heading inside callout also has good contrast */
+.callout h3 {
+	color: #ffd966;  /* Light gold - still high contrast against dark bg */
+	margin-top: 0;
+}
+
+/* FIX: Footer content moved to left */
+footer {
+	margin-top: 1rem;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	font-size: smaller;
+	text-align: left;  /* Changed from 'right' to 'left' */
+}

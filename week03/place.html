@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+
+  <title>WDD 131 – Dynamic Web Fundamentals – Frederick Atabo</title>
+    <meta name="description" content="Discover Madagascar: area, population, capital, languages, currency, and current weather conditions">
+    <meta name="author" content="Frederick Atabo">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Madagascar</h1>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO IMAGE (responsive via <picture>) -->
+    <picture class="hero">
+      <source
+        media="(min-width: 768px)"
+        srcset="images/madagascar-large.webp"
+        width="1400"
+        height="500"
+      />
+      <img
+        src="images/madagascar-small.webp"
+        alt="Ring-tailed lemurs of Madagascar"
+        width="600"
+        height="700"
+        loading="eager"
+      />
+    </picture>
+
+    <!-- INFO GRID (data + weather side by side on wide screens) -->
+    <section class="info-grid">
+
+      <!-- DATA CARD -->
+      <div class="card data-card">
+        <h2>Data</h2>
+        <dl>
+          <dt>Area:</dt>       <dd>587,041 sq km</dd>
+          <dt>Population:</dt> <dd>27,691,018</dd>
+          <dt>Capital:</dt>    <dd>Antananarivo</dd>
+          <dt>Languages:</dt>  <dd>Malagasy, French</dd>
+          <dt>Currency:</dt>   <dd>Malagasy Ariary</dd>
+          <dt>Time Zone:</dt>  <dd>UTC+3</dd>
+          <dt>Calling Code:</dt><dd>+261</dd>
+          <dt>Internet TLD:</dt><dd>.mg</dd>
+        </dl>
+      </div>
+
+      <!-- WEATHER CARD -->
+      <div class="card weather-card">
+        <!-- SVG icon shown in mobile; emoticon shown in desktop via CSS pseudo-element -->
+        <h2 class="weather-heading">Weather</h2>
+
+        <!-- SVG icon (mobile only) -->
+        <div class="weather-icon-mobile" aria-hidden="true">
+          <!-- Inline SVG: partly cloudy sun -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80" aria-label="Partly cloudy">
+            <circle cx="28" cy="26" r="10" fill="#F5A623"/>
+            <line x1="28" y1="10" x2="28" y2="6"  stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="28" y1="46" x2="28" y2="42" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="12" y1="26" x2="8"  y2="26" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="48" y1="26" x2="44" y2="26" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="17" y1="15" x2="14" y2="12" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="42" y1="15" x2="45" y2="12" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="17" y1="37" x2="14" y2="40" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <line x1="42" y1="37" x2="45" y2="40" stroke="#F5A623" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="36" cy="42" rx="16" ry="10" fill="#CFD8DC"/>
+            <ellipse cx="24" cy="46" rx="12" ry="8"  fill="#ECEFF1"/>
+            <ellipse cx="44" cy="46" rx="10" ry="8"  fill="#ECEFF1"/>
+          </svg>
+        </div>
+
+        <dl>
+          <dt>Temperature:</dt> <dd>10 °C</dd>
+          <dt>Conditions:</dt>  <dd>Partly Cloudy</dd>
+          <dt>Wind:</dt>        <dd>5 km/h</dd>
+          <dt>Wind Chill:</dt>  <dd id="wind-chill">—</dd>
+        </dl>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      &copy;<span id="current-year"></span>
+      🌺 Frederick Atabo 🌺 Madagascar
+    </p>
+    <p>Last Modification: <span id="last-modified"></span></p>
+  </footer>
+
+</body>
+</html>
