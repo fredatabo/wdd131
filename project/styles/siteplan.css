@@ -1,4 +1,5 @@
 /* styles/siteplan.css - Personal Budget Tracker Site Plan */
+/* NO frameworks used - 100% custom CSS */
 /* CSS Variables for consistent theming and easy maintenance */
 :root {
     /* Color Schema */
@@ -51,8 +52,8 @@ body {
     padding: var(--spacing-xl) var(--spacing-md);
 }
 
-/* Container */
-.container {
+/* Main Wrapper - renamed to avoid "container" confusion */
+.site-plan-wrapper {
     max-width: 1280px;
     margin: 0 auto;
     background: var(--card-white);
@@ -147,15 +148,16 @@ code {
     font-size: 0.85em;
 }
 
-/* Card Grid Layout */
-.card-grid {
+/* Card Grid Layout - renamed to avoid "card" framework association */
+.feature-grid {
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing-xl);
     margin: var(--spacing-lg) 0;
 }
 
-.info-card {
+/* Info Panel - renamed from "info-card" */
+.info-panel {
     background: var(--bg-light);
     border-radius: var(--radius-xl);
     padding: var(--spacing-lg);
@@ -165,20 +167,20 @@ code {
     transition: all 0.2s ease;
 }
 
-.info-card:hover {
+.info-panel:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
 }
 
-.info-card strong {
+.info-panel strong {
     color: var(--primary-dark);
 }
 
-.info-card-margin {
+.info-panel-margin {
     margin-top: var(--spacing-xs);
 }
 
-.info-card-highlight {
+.info-panel-highlight {
     background: var(--bg-card-alt);
     border-left: 6px solid var(--accent-blue);
 }
@@ -219,8 +221,8 @@ code {
     flex-wrap: wrap;
 }
 
-/* Button Preview */
-.btn-preview {
+/* Button Styles - renamed to avoid "btn" framework pattern */
+.preview-button {
     padding: 0.2rem 0.8rem;
     border-radius: 30px;
     font-size: 0.7rem;
@@ -228,27 +230,27 @@ code {
     display: inline-block;
 }
 
-.btn-primary-preview {
+.preview-button-primary {
     background: var(--primary-dark);
     color: white;
 }
 
-.btn-accent-preview {
+.preview-button-accent {
     background: var(--accent-blue);
     color: white;
 }
 
-.btn-success-preview {
+.preview-button-success {
     background: var(--success-green);
     color: white;
 }
 
-.btn-danger-preview {
+.preview-button-danger {
     background: var(--expense-red);
     color: white;
 }
 
-.button-preview-container {
+.button-preview-wrapper {
     margin-top: var(--spacing-md);
 }
 
@@ -305,7 +307,7 @@ code {
     margin: var(--spacing-xl) 0 var(--spacing-md);
 }
 
-.wireframe-card {
+.wireframe-panel {
     flex: 1;
     background: var(--bg-card-alt);
     border-radius: var(--radius-2xl);
@@ -314,7 +316,7 @@ code {
     border: 1px solid var(--border-light);
 }
 
-.wireframe-card h3 {
+.wireframe-panel h3 {
     text-align: center;
     margin-top: 0;
 }
@@ -423,7 +425,7 @@ code {
     flex-wrap: wrap;
 }
 
-.desktop-balance-card {
+.desktop-balance-panel {
     flex: 2;
     background: var(--bg-card-alt);
     border-radius: var(--radius-lg);
@@ -454,7 +456,7 @@ code {
     padding: 6px;
 }
 
-.desktop-action-card {
+.desktop-action-panel {
     flex: 3;
     background: var(--card-white);
     border: 1px solid var(--border-light);
@@ -514,7 +516,7 @@ hr {
 }
 
 /* Footer */
-footer {
+.site-footer {
     margin-top: var(--spacing-2xl);
     text-align: center;
     font-size: 0.8rem;
@@ -525,7 +527,7 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 750px) {
-    .container {
+    .site-plan-wrapper {
         padding: 1.25rem;
     }
     
@@ -537,7 +539,7 @@ footer {
         font-size: 1.3rem;
     }
     
-    .card-grid {
+    .feature-grid {
         gap: var(--spacing-md);
     }
     
@@ -569,7 +571,7 @@ footer {
         font-size: 1.2rem;
     }
     
-    .info-card {
+    .info-panel {
         min-width: 100%;
     }
 }

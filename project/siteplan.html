@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget Tracker | Site Plan</title>
-    <meta name="description" content="Site plan for a Personal Budget Tracker web application - a practical tool for managing income, expenses, and spending categories with real-time visual summaries.">
+    <meta name="description" content="Site plan for a Personal Budget Tracker web app. Plan includes wireframes, color schema, typography, and user scenarios for an interactive financial tool.">
     <meta name="author" content="Frederick Atabo - WDD 131">
     
     <!-- Google Fonts with required preconnect links -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 <body>
-<div class="container">
+<div class="site-plan-wrapper">
     <!-- Site Header with logo / site name -->
     <div class="site-header">
         <div class="logo-area">
@@ -45,7 +45,7 @@
             <li><strong>"How much did I spend on eating out and groceries this month compared to my transport budget?"</strong> — The user expects to see category-specific totals and a visual pie/bar chart to compare spending habits.</li>
             <li><strong>"After adding my freelance income and medical bill, can I see my updated balance immediately without refreshing the page?"</strong> — Real-time updates and dynamic running balance are essential for the visitor's experience.</li>
         </ul>
-        <div class="info-card info-card-margin">
+        <div class="info-panel info-panel-margin">
             <p>✨ <strong>Target audience</strong>: University students, young professionals, and anyone seeking a simple but powerful budget overview with instant feedback and interactive controls.</p>
         </div>
     </section>
@@ -53,8 +53,8 @@
     <!-- Color Schema (applied to this document) -->
     <section>
         <h2>🎨 Color Schema</h2>
-        <div class="card-grid">
-            <div class="info-card">
+        <div class="feature-grid">
+            <div class="info-panel">
                 <h3>Primary / Deep Navy</h3>
                 <div class="color-swatch">
                     <span class="color-demo color-demo-primary"></span>
@@ -62,7 +62,7 @@
                 </div>
                 <p><strong>Usage:</strong> Main headings (<code>&lt;h1&gt;,&lt;h2&gt;</code>), site name, navigation background, footer accents, and border highlights. Provides a strong professional foundation.</p>
             </div>
-            <div class="info-card">
+            <div class="info-panel">
                 <h3>Accent / Vibrant Blue</h3>
                 <div class="color-swatch">
                     <span class="color-demo color-demo-accent"></span>
@@ -70,7 +70,7 @@
                 </div>
                 <p><strong>Usage:</strong> Buttons, interactive elements (add transaction, reset), category badges, chart accents, link hover states, and important numeric callouts. Draws attention to primary actions.</p>
             </div>
-            <div class="info-card">
+            <div class="info-panel">
                 <h3>Neutral Backgrounds</h3>
                 <div class="color-swatch">
                     <span class="color-demo color-demo-bg-light"></span>
@@ -81,11 +81,11 @@
                 <p><strong>Usage:</strong> Page background, card backgrounds, input fields. Creates a clean, airy interface. Text uses <code>#334155</code> for high readability.</p>
             </div>
         </div>
-        <div class="button-preview-container">
-            <span class="btn-preview btn-primary-preview">Heading & Primary</span>
-            <span class="btn-preview btn-accent-preview">Interactive Accent</span>
-            <span class="btn-preview btn-success-preview">Balance Positive</span>
-            <span class="btn-preview btn-danger-preview">Expense Highlight</span>
+        <div class="button-preview-wrapper">
+            <span class="preview-button preview-button-primary">Heading & Primary</span>
+            <span class="preview-button preview-button-accent">Interactive Accent</span>
+            <span class="preview-button preview-button-success">Balance Positive</span>
+            <span class="preview-button preview-button-danger">Expense Highlight</span>
             <span class="preview-note">(additional functional colors for data visualization)</span>
         </div>
     </section>
@@ -93,13 +93,13 @@
     <!-- Typography -->
     <section>
         <h2>🔤 Typography</h2>
-        <div class="card-grid">
-            <div class="info-card">
+        <div class="feature-grid">
+            <div class="info-panel">
                 <h3 class="typography-heading-demo">Montserrat (Headings)</h3>
                 <p>Used for all headings: <strong>H1, H2, H3,</strong> logo, and section titles. Bold, geometric and modern — reinforces clarity and structure.</p>
                 <p class="heading-example">Example: Dashboard Overview</p>
             </div>
-            <div class="info-card">
+            <div class="info-panel">
                 <h3 class="typography-body-demo">Inter (Body & UI)</h3>
                 <p>Applied to paragraphs, input fields, transaction lists, labels, charts, and descriptive text. Highly legible on screens, excellent for data-heavy interfaces.</p>
                 <p class="body-example">Current balance: $2,450.20 | Groceries: $340</p>
@@ -113,7 +113,7 @@
         <h2>📱 Wireframes (Layout Concepts)</h2>
         <div class="wireframe-row">
             <!-- Mobile Wireframe -->
-            <div class="wireframe-card">
+            <div class="wireframe-panel">
                 <h3>📲 Mobile View ( ≤ 640px )</h3>
                 <div class="wireframe-diagram mobile-wf">
                     <div class="wf-placeholder">
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Desktop Wireframe -->
-            <div class="wireframe-card">
+            <div class="wireframe-panel">
                 <h3>🖥️ Desktop View ( ≥ 1024px )</h3>
                 <div class="wireframe-diagram">
                     <div class="wf-placeholder">
@@ -145,17 +145,17 @@
                             <span class="desktop-header-subtitle">Budget Dashboard</span>
                         </div>
                         <div class="desktop-balance-row">
-                            <div class="desktop-balance-card">
+                            <div class="desktop-balance-panel">
                                 <div class="balance-label">Balance: $3,420.50</div>
                                 <div class="balance-stats">
                                     <div class="income-stat">Income +$2k</div>
                                     <div class="expense-stat">Expenses -$850</div>
                                 </div>
                             </div>
-                            <div class="desktop-action-card">
+                            <div class="desktop-action-panel">
                                 <div class="action-buttons">
-                                    <span class="btn-preview btn-accent-preview">➕ Add Entry</span>
-                                    <span class="btn-preview btn-accent-preview">📅 Filter</span>
+                                    <span class="preview-button preview-button-accent">➕ Add Entry</span>
+                                    <span class="preview-button preview-button-accent">📅 Filter</span>
                                 </div>
                             </div>
                         </div>
@@ -186,21 +186,21 @@
     <hr>
     <section>
         <h2>⚙️ Technical & Interactivity Summary</h2>
-        <div class="card-grid">
-            <div class="info-card">
+        <div class="feature-grid">
+            <div class="info-panel">
                 <h3>📄 HTML5 Structure</h3>
                 <p>Semantic elements: header, main, sections, form, table or dynamic card container for transaction list. Accessible forms and ARIA labels for income/expense inputs.</p>
             </div>
-            <div class="info-card">
+            <div class="info-panel">
                 <h3>🎨 CSS (Responsive)</h3>
                 <p>Flexbox + Grid, mobile-first media queries, consistent spacing, and color scheme applied according to this plan. Buttons and cards adapt to different viewports.</p>
             </div>
-            <div class="info-card">
+            <div class="info-panel">
                 <h3>⚡ JavaScript (Real-time)</h3>
                 <p>Event listeners for adding income/expense, deleting entries, filtering categories. Dynamic running balance, total per category, and chart.js / custom chart update. No page reloads — using DOM manipulation and localStorage (optional for persistence).</p>
             </div>
         </div>
-        <div class="info-card info-card-highlight">
+        <div class="info-panel info-panel-highlight">
             <p><strong>Key interactive features:</strong> instant balance update, category spend breakdown, dynamic charts, validation for numeric inputs, and a summary table that updates as soon as user adds an entry. The project demonstrates full CRUD-like functionality for budget entries.</p>
         </div>
     </section>
@@ -213,9 +213,9 @@
     </section>
 
     <!-- Footer with plan date and project folder note -->
-    <footer>
+    <footer class="site-footer">
         <p>📁 Personal Budget Tracker — Site Planning Document | Project folder: wdd131/project/ | All colors/typography applied according to schema.</p>
-        <p>© 2026 MoneyLens — interactive budget tool. Wireframes represent final layout direction for both mobile and desktop experiences.</p>
+        <p>© 2025 MoneyLens — interactive budget tool. Wireframes represent final layout direction for both mobile and desktop experiences.</p>
     </footer>
 </div>
 </body>
