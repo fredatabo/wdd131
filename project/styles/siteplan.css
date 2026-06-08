@@ -1,4 +1,4 @@
-/* styles.css - Personal Budget Tracker Site Plan */
+/* styles/siteplan.css - Personal Budget Tracker Site Plan */
 /* CSS Variables for consistent theming and easy maintenance */
 :root {
     /* Color Schema */
@@ -174,6 +174,15 @@ code {
     color: var(--primary-dark);
 }
 
+.info-card-margin {
+    margin-top: var(--spacing-xs);
+}
+
+.info-card-highlight {
+    background: var(--bg-card-alt);
+    border-left: 6px solid var(--accent-blue);
+}
+
 /* Color Demo Swatches */
 .color-demo {
     display: inline-block;
@@ -182,7 +191,24 @@ code {
     border-radius: var(--radius-sm);
     vertical-align: middle;
     margin-right: var(--spacing-xs);
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.color-demo-primary {
+    background: var(--primary-dark);
+}
+
+.color-demo-accent {
+    background: var(--accent-blue);
+}
+
+.color-demo-bg-light {
+    background: var(--bg-light);
+}
+
+.color-demo-white {
+    background: var(--card-white);
+    border: 1px solid var(--border-light);
 }
 
 .color-swatch {
@@ -195,13 +221,41 @@ code {
 
 /* Button Preview */
 .btn-preview {
-    background: var(--accent-blue);
-    color: white;
     padding: 0.2rem 0.8rem;
     border-radius: 30px;
     font-size: 0.7rem;
     font-weight: 500;
     display: inline-block;
+}
+
+.btn-primary-preview {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.btn-accent-preview {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.btn-success-preview {
+    background: var(--success-green);
+    color: white;
+}
+
+.btn-danger-preview {
+    background: var(--expense-red);
+    color: white;
+}
+
+.button-preview-container {
+    margin-top: var(--spacing-md);
+}
+
+.preview-note {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: var(--spacing-sm);
 }
 
 /* Scenario List */
@@ -215,6 +269,32 @@ code {
     background-size: 18px;
     padding-left: 1.8rem;
     margin-bottom: var(--spacing-md);
+}
+
+/* Typography Demo Examples */
+.typography-heading-demo {
+    font-family: var(--font-heading);
+}
+
+.typography-body-demo {
+    font-family: var(--font-body);
+}
+
+.heading-example {
+    font-family: var(--font-heading);
+    background: var(--bg-card-alt);
+    padding: 6px;
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-sm);
+}
+
+.body-example {
+    font-family: var(--font-body);
+    margin-top: var(--spacing-sm);
+}
+
+.typography-note {
+    margin-top: var(--spacing-sm);
 }
 
 /* Wireframes Section */
@@ -278,6 +358,10 @@ code {
     padding: 0 var(--spacing-md);
 }
 
+.desktop-header-subtitle {
+    font-size: 0.7rem;
+}
+
 .wf-stats {
     background: #EFF6FF;
     height: 70px;
@@ -322,6 +406,106 @@ code {
     border: 1px solid #CBD5E1;
 }
 
+.wf-recent-entry {
+    background: var(--bg-card-alt);
+    border-radius: var(--radius-md);
+    padding: 6px;
+    margin-top: var(--radius-sm);
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+/* Desktop Wireframe Specific */
+.desktop-balance-row {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    flex-wrap: wrap;
+}
+
+.desktop-balance-card {
+    flex: 2;
+    background: var(--bg-card-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+}
+
+.balance-label {
+    font-weight: bold;
+}
+
+.balance-stats {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--radius-sm);
+}
+
+.income-stat {
+    background: #DBEAFE;
+    flex: 1;
+    border-radius: var(--radius-md);
+    padding: 6px;
+}
+
+.expense-stat {
+    background: #FEE2E2;
+    flex: 1;
+    border-radius: var(--radius-md);
+    padding: 6px;
+}
+
+.desktop-action-card {
+    flex: 3;
+    background: var(--card-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--radius-sm);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.desktop-two-columns {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.categories-sidebar {
+    flex: 1;
+    background: var(--bg-card-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--radius-sm);
+}
+
+.chart-area {
+    flex: 2;
+    background: var(--bg-card-alt);
+    border-radius: var(--radius-lg);
+    padding: 10px;
+    text-align: center;
+}
+
+.recent-transactions {
+    margin-top: var(--spacing-md);
+    background: var(--card-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    padding: var(--radius-sm);
+}
+
+.wireframe-caption {
+    margin-top: var(--spacing-md);
+    font-size: 0.8rem;
+}
+
+.wireframe-footer-note {
+    margin-top: var(--spacing-md);
+}
+
 /* Horizontal Rule */
 hr {
     margin: var(--spacing-xl) 0 var(--spacing-md);
@@ -359,6 +543,10 @@ footer {
     
     .wireframe-row {
         gap: var(--spacing-md);
+    }
+    
+    .desktop-two-columns {
+        flex-direction: column;
     }
 }
 

@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget Tracker | Site Plan</title>
-    <!-- Google Fonts: Montserrat for headings, Inter for body -->
+    <meta name="description" content="Site plan for a Personal Budget Tracker web application - a practical tool for managing income, expenses, and spending categories with real-time visual summaries.">
+    <meta name="author" content="Frederick Atabo - WDD 131">
+    
+    <!-- Google Fonts with required preconnect links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 <body>
@@ -23,7 +29,7 @@
     <section>
         <h2>📌 Site Name</h2>
         <p><strong>MoneyLens — Personal Budget Tracker</strong><br>
-        The name "MoneyLens" combines clarity and insight (“lens”) with personal finance (“money”), suggesting a clear view of your spending, income, and savings. It’s modern, memorable, and reflects the tool's core mission: helping users see their financial picture at a glance. Optional domain: <code>moneylens.app</code> or <code>mybudgetlens.com</code> (available for registration).</p>
+        The name "MoneyLens" combines clarity and insight ("lens") with personal finance ("money"), suggesting a clear view of your spending, income, and savings. It's modern, memorable, and reflects the tool's core mission: helping users see their financial picture at a glance. Optional domain: <code>moneylens.app</code> or <code>mybudgetlens.com</code> (available for registration).</p>
     </section>
 
     <!-- Site Purpose -->
@@ -36,10 +42,10 @@
     <section>
         <h2>❓ User Scenarios</h2>
         <ul class="scenario-list">
-            <li><strong>“How much did I spend on eating out and groceries this month compared to my transport budget?”</strong> — The user expects to see category-specific totals and a visual pie/bar chart to compare spending habits.</li>
-            <li><strong>“After adding my freelance income and medical bill, can I see my updated balance immediately without refreshing the page?”</strong> — Real-time updates and dynamic running balance are essential for the visitor's experience.</li>
+            <li><strong>"How much did I spend on eating out and groceries this month compared to my transport budget?"</strong> — The user expects to see category-specific totals and a visual pie/bar chart to compare spending habits.</li>
+            <li><strong>"After adding my freelance income and medical bill, can I see my updated balance immediately without refreshing the page?"</strong> — Real-time updates and dynamic running balance are essential for the visitor's experience.</li>
         </ul>
-        <div class="info-card" style="margin-top: 0.5rem;">
+        <div class="info-card info-card-margin">
             <p>✨ <strong>Target audience</strong>: University students, young professionals, and anyone seeking a simple but powerful budget overview with instant feedback and interactive controls.</p>
         </div>
     </section>
@@ -50,21 +56,38 @@
         <div class="card-grid">
             <div class="info-card">
                 <h3>Primary / Deep Navy</h3>
-                <div class="color-swatch"><span class="color-demo" style="background:var(--primary-dark);"></span> <code>#1E2F5E</code></div>
+                <div class="color-swatch">
+                    <span class="color-demo color-demo-primary"></span>
+                    <code>#1E2F5E</code>
+                </div>
                 <p><strong>Usage:</strong> Main headings (<code>&lt;h1&gt;,&lt;h2&gt;</code>), site name, navigation background, footer accents, and border highlights. Provides a strong professional foundation.</p>
             </div>
             <div class="info-card">
                 <h3>Accent / Vibrant Blue</h3>
-                <div class="color-swatch"><span class="color-demo" style="background:var(--accent-blue);"></span> <code>#3B82F6</code></div>
+                <div class="color-swatch">
+                    <span class="color-demo color-demo-accent"></span>
+                    <code>#3B82F6</code>
+                </div>
                 <p><strong>Usage:</strong> Buttons, interactive elements (add transaction, reset), category badges, chart accents, link hover states, and important numeric callouts. Draws attention to primary actions.</p>
             </div>
             <div class="info-card">
                 <h3>Neutral Backgrounds</h3>
-                <div class="color-swatch"><span class="color-demo" style="background:var(--bg-light);"></span> <code>#F8FAFE</code> (light page bg) & <code>#FFFFFF</code> (cards)</div>
+                <div class="color-swatch">
+                    <span class="color-demo color-demo-bg-light"></span>
+                    <code>#F8FAFE</code> (light page bg)
+                    <span class="color-demo color-demo-white"></span>
+                    <code>#FFFFFF</code> (cards)
+                </div>
                 <p><strong>Usage:</strong> Page background, card backgrounds, input fields. Creates a clean, airy interface. Text uses <code>#334155</code> for high readability.</p>
             </div>
         </div>
-        <p><span class="btn-preview" style="background:var(--primary-dark);">Heading & Primary</span> <span class="btn-preview">Interactive Accent</span> <span class="btn-preview" style="background:var(--success-green);">Balance Positive</span> <span class="btn-preview" style="background:var(--expense-red);">Expense Highlight</span> (additional functional colors for data visualization)</p>
+        <div class="button-preview-container">
+            <span class="btn-preview btn-primary-preview">Heading & Primary</span>
+            <span class="btn-preview btn-accent-preview">Interactive Accent</span>
+            <span class="btn-preview btn-success-preview">Balance Positive</span>
+            <span class="btn-preview btn-danger-preview">Expense Highlight</span>
+            <span class="preview-note">(additional functional colors for data visualization)</span>
+        </div>
     </section>
 
     <!-- Typography -->
@@ -72,17 +95,17 @@
         <h2>🔤 Typography</h2>
         <div class="card-grid">
             <div class="info-card">
-                <h3 style="font-family: var(--font-heading);">Montserrat (Headings)</h3>
+                <h3 class="typography-heading-demo">Montserrat (Headings)</h3>
                 <p>Used for all headings: <strong>H1, H2, H3,</strong> logo, and section titles. Bold, geometric and modern — reinforces clarity and structure.</p>
-                <p style="font-family:var(--font-heading); background:var(--bg-card-alt); padding:6px; border-radius:12px;">Example: Dashboard Overview</p>
+                <p class="heading-example">Example: Dashboard Overview</p>
             </div>
             <div class="info-card">
-                <h3 style="font-family: var(--font-body);">Inter (Body & UI)</h3>
+                <h3 class="typography-body-demo">Inter (Body & UI)</h3>
                 <p>Applied to paragraphs, input fields, transaction lists, labels, charts, and descriptive text. Highly legible on screens, excellent for data-heavy interfaces.</p>
-                <p style="font-family:var(--font-body);">Current balance: $2,450.20 | Groceries: $340</p>
+                <p class="body-example">Current balance: $2,450.20 | Groceries: $340</p>
             </div>
         </div>
-        <p><em>Note: the combination of Montserrat + Inter keeps the design professional, and accessible. No more than 2 fonts used as recommended.</em></p>
+        <p class="typography-note"><em>Note: the combination of Montserrat + Inter keeps the design professional, and accessible. No more than 2 fonts used as recommended.</em></p>
     </section>
 
     <!-- Wireframes: Mobile & Desktop views (simple structural diagrams) -->
@@ -106,10 +129,10 @@
                             <div class="wf-cat">➕ Add</div>
                         </div>
                         <div class="wf-chart">📊 Spending chart (pie/bar preview)</div>
-                        <div style="background:var(--bg-card-alt); border-radius: 12px; padding: 6px; margin-top: 8px; font-size: 0.6rem; text-align:center;">Recent entries: Coffee -$4.50</div>
+                        <div class="wf-recent-entry">Recent entries: Coffee -$4.50</div>
                     </div>
                 </div>
-                <p class="text-body" style="margin-top: 12px; font-size: 0.8rem;"><strong>Structure:</strong> Stacked vertical layout: header → balance card → category filters & quick-add → chart summary → transactions list. Bottom input form for adding income/expense.</p>
+                <p class="wireframe-caption"><strong>Structure:</strong> Stacked vertical layout: header → balance card → category filters & quick-add → chart summary → transactions list. Bottom input form for adding income/expense.</p>
             </div>
 
             <!-- Desktop Wireframe -->
@@ -119,44 +142,44 @@
                     <div class="wf-placeholder">
                         <div class="wf-header desktop-header"> 
                             <span>💰 MoneyLens</span> 
-                            <span style="font-size:0.7rem;">Budget Dashboard</span>
+                            <span class="desktop-header-subtitle">Budget Dashboard</span>
                         </div>
-                        <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
-                            <div style="flex:2; background:var(--bg-card-alt); border-radius: 16px; padding: 12px;">
-                                <div style="font-weight:bold;">Balance: $3,420.50</div>
-                                <div style="display: flex; gap: 12px; margin-top: 8px;">
-                                    <div style="background:#DBEAFE; flex:1; border-radius: 12px; padding: 6px;">Income +$2k</div>
-                                    <div style="background:#FEE2E2; flex:1; border-radius: 12px; padding: 6px;">Expenses -$850</div>
+                        <div class="desktop-balance-row">
+                            <div class="desktop-balance-card">
+                                <div class="balance-label">Balance: $3,420.50</div>
+                                <div class="balance-stats">
+                                    <div class="income-stat">Income +$2k</div>
+                                    <div class="expense-stat">Expenses -$850</div>
                                 </div>
                             </div>
-                            <div style="flex:3; background:white; border:1px solid var(--border-light); border-radius: 16px; padding: 8px;">
-                                <div style="display: flex; gap: 6px; flex-wrap:wrap;">
-                                    <span class="btn-preview">➕ Add Entry</span>
-                                    <span class="btn-preview">📅 Filter</span>
+                            <div class="desktop-action-card">
+                                <div class="action-buttons">
+                                    <span class="btn-preview btn-accent-preview">➕ Add Entry</span>
+                                    <span class="btn-preview btn-accent-preview">📅 Filter</span>
                                 </div>
                             </div>
                         </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <div style="flex: 1; background:var(--bg-card-alt); border-radius: 16px; padding: 8px;">
+                        <div class="desktop-two-columns">
+                            <div class="categories-sidebar">
                                 <strong>Categories</strong>
                                 <div>🍔 Food: $320</div>
                                 <div>🚗 Transport: $95</div>
                                 <div>⚡ Utilities: $210</div>
                                 <div>🎬 Entertainment: $70</div>
                             </div>
-                            <div style="flex: 2; background:var(--bg-card-alt); border-radius: 16px; padding: 10px; text-align:center;">
+                            <div class="chart-area">
                                 📈 CHART: Expense distribution (bar/pie chart mock)
                             </div>
                         </div>
-                        <div style="margin-top: 1rem; background:#FFFFFF; border-radius: 12px; border: 1px solid var(--border-light); padding: 8px;">
+                        <div class="recent-transactions">
                             <strong>Recent transactions</strong> – dynamic list with edit/delete options
                         </div>
                     </div>
                 </div>
-                <p class="text-body" style="margin-top: 12px; font-size: 0.8rem;"><strong>Layout:</strong> Two-column structure. Left: summary cards + category breakdown. Right: charts + input area. Balance stays prominent, top bar with quick actions. Tables and interactive charts update dynamically.</p>
+                <p class="wireframe-caption"><strong>Layout:</strong> Two-column structure. Left: summary cards + category breakdown. Right: charts + input area. Balance stays prominent, top bar with quick actions. Tables and interactive charts update dynamically.</p>
             </div>
         </div>
-        <p><em>Wireframes illustrate main interface regions: real-time balance display, spending categories, transaction log, and visual chart summaries. The final implementation uses JS-driven updates and responsive grid/flex.</em></p>
+        <p class="wireframe-footer-note"><em>Wireframes illustrate main interface regions: real-time balance display, spending categories, transaction log, and visual chart summaries. The final implementation uses JS-driven updates and responsive grid/flex.</em></p>
     </section>
 
     <!-- Additional project context: technology & interactivity -->
@@ -177,7 +200,7 @@
                 <p>Event listeners for adding income/expense, deleting entries, filtering categories. Dynamic running balance, total per category, and chart.js / custom chart update. No page reloads — using DOM manipulation and localStorage (optional for persistence).</p>
             </div>
         </div>
-        <div class="info-card" style="background:var(--bg-card-alt); border-left: 6px solid var(--accent-blue);">
+        <div class="info-card info-card-highlight">
             <p><strong>Key interactive features:</strong> instant balance update, category spend breakdown, dynamic charts, validation for numeric inputs, and a summary table that updates as soon as user adds an entry. The project demonstrates full CRUD-like functionality for budget entries.</p>
         </div>
     </section>
@@ -186,7 +209,7 @@
     <section>
         <h2>💡 Why this subject solves real needs?</h2>
         <p>Personal finance management is a daily necessity. This budget tracker gives users clarity, encourages responsibility, and provides visual feedback to adjust spending behavior. The interactivity (real-time, no reload) mimics modern web apps, making the experience frictionless. With my strong focus on UX and data representation, the tracker becomes a valuable tool beyond the classroom assignment.</p>
-        <p><strong>Target audience scenarios covered:</strong> “How do I categorize an unexpected medical expense?” → dynamic category picker. “Show me the money left after all bills” → running balance always visible, plus chart forecasting. The site plan forms a solid roadmap to meet these demands.</p>
+        <p><strong>Target audience scenarios covered:</strong> "How do I categorize an unexpected medical expense?" → dynamic category picker. "Show me the money left after all bills" → running balance always visible, plus chart forecasting. The site plan forms a solid roadmap to meet these demands.</p>
     </section>
 
     <!-- Footer with plan date and project folder note -->
