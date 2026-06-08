@@ -1,0 +1,387 @@
+/* styles.css - Personal Budget Tracker Site Plan */
+/* CSS Variables for consistent theming and easy maintenance */
+:root {
+    /* Color Schema */
+    --primary-dark: #1E2F5E;      /* Deep navy - headings, site name, borders */
+    --accent-blue: #3B82F6;       /* Vibrant blue - buttons, interactive elements */
+    --bg-light: #F8FAFE;          /* Soft ice blue - page background */
+    --card-white: #FFFFFF;        /* White - card backgrounds */
+    --text-dark: #1E293B;         /* Primary text color */
+    --text-muted: #334155;        /* Muted text for paragraphs */
+    --border-light: #E2E8F0;      /* Light borders */
+    --success-green: #10B981;     /* Positive balance indicator */
+    --expense-red: #EF4444;       /* Expense highlights */
+    --bg-card-alt: #F1F5F9;       /* Alternative card background for wireframes */
+    --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', 'Roboto', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 0.75rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 40px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.5;
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Container */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: var(--card-white);
+    border-radius: 28px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-2xl);
+}
+
+/* Header & Branding */
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    border-bottom: 3px solid var(--accent-blue);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.logo-icon {
+    background: var(--primary-dark);
+    width: 48px;
+    height: 48px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.site-name {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.3px;
+}
+
+.domain-badge {
+    background: #EFF6FF;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-blue);
+    border: 1px solid #BFDBFE;
+}
+
+/* Typography */
+h1, h2, h3, h4, .heading-font {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    border-left: 5px solid var(--accent-blue);
+    padding-left: var(--spacing-md);
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+    color: var(--primary-dark);
+}
+
+p, .text-body, li, .scenario-text {
+    font-family: var(--font-body);
+    color: var(--text-muted);
+}
+
+code {
+    background: var(--bg-card-alt);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.85em;
+}
+
+/* Card Grid Layout */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+}
+
+.info-card {
+    background: var(--bg-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    flex: 1;
+    min-width: 220px;
+    border: 1px solid var(--border-light);
+    transition: all 0.2s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.info-card strong {
+    color: var(--primary-dark);
+}
+
+/* Color Demo Swatches */
+.color-demo {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    vertical-align: middle;
+    margin-right: var(--spacing-xs);
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.color-swatch {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+    flex-wrap: wrap;
+}
+
+/* Button Preview */
+.btn-preview {
+    background: var(--accent-blue);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Scenario List */
+.scenario-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.scenario-list li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%233B82F6" viewBox="0 0 20 20" width="16" height="16"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm.5-13v4l3 2-1 1.5-3.5-2.25V5h1.5z"/></svg>') left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.8rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Wireframes Section */
+.wireframe-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.wireframe-card {
+    flex: 1;
+    background: var(--bg-card-alt);
+    border-radius: var(--radius-2xl);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.wireframe-card h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.wireframe-diagram {
+    background: var(--card-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    border: 1px solid #CBD5E1;
+    font-family: monospace;
+}
+
+.mobile-wf {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.wf-placeholder {
+    background: var(--card-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+.wf-header {
+    background: var(--primary-dark);
+    height: 42px;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.desktop-header {
+    justify-content: space-between;
+    padding: 0 var(--spacing-md);
+}
+
+.wf-stats {
+    background: #EFF6FF;
+    height: 70px;
+    border-radius: 14px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-xs);
+    text-align: center;
+    font-size: 0.7rem;
+    border: 1px dashed var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wf-categories {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.wf-cat {
+    background: var(--border-light);
+    height: 32px;
+    flex: 1;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    font-size: 0.6rem;
+    line-height: 32px;
+}
+
+.wf-chart {
+    background: var(--bg-card-alt);
+    height: 110px;
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-md) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+    font-size: 0.7rem;
+    border: 1px solid #CBD5E1;
+}
+
+/* Horizontal Rule */
+hr {
+    margin: var(--spacing-xl) 0 var(--spacing-md);
+    border: none;
+    border-top: 2px dotted #CBD5E1;
+}
+
+/* Footer */
+footer {
+    margin-top: var(--spacing-2xl);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #5B6E8C;
+    border-top: 1px solid var(--border-light);
+    padding-top: var(--spacing-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+    .container {
+        padding: 1.25rem;
+    }
+    
+    .site-name {
+        font-size: 1.4rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    .card-grid {
+        gap: var(--spacing-md);
+    }
+    
+    .wireframe-row {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: var(--spacing-md);
+    }
+    
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    .info-card {
+        min-width: 100%;
+    }
+}
