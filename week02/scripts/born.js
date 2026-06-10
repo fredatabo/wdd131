@@ -3,58 +3,67 @@ const input = document.querySelector('#favchap');
 const button = document.querySelector('button');
 const list = document.querySelector('#list'); // Reference to the unordered list element
 
-// Function to add a new chapter
-function addChapter() {
-  // Get the trimmed value from the input field
-  const chapterText = input.value.trim();
-  
-  // Check if the input is empty
-  if (chapterText === '') {
-    input.focus();
-    return;
-  }
+// Declare chaptersArray - retrieve from localStorage or initialize as empty array
+let chaptersArray = getChapterList() || [];
 
-  // Step 2: Create a li element that will hold each entry's chapter title and delete button
-  const li = document.createElement('li');
-  
-  // Step 3: Populate the li element's textContent with the input value
-  li.textContent = chapterText;
-  
-  // Step 4: Create a delete button
-  const deleteButton = document.createElement('button');
-  
-  // Step 5: Set the delete button's textContent to ❌
-  deleteButton.textContent = '❌';
-  
-  // Step 6: Add aria-label for accessibility (screen readers)
-  deleteButton.setAttribute('aria-label', `Remove ${chapterText}`);
-  
-  // Add a class for styling (optional)
-  deleteButton.classList.add('delete');
-  
-  // Step 7: Append the delete button to the li element
-  li.appendChild(deleteButton);
-  
-  // Step 8: Append the li element to the unordered list in your HTML
-  list.appendChild(li);
-  
-  // Clear the input field and set focus back to it
-  input.value = '';
-  input.focus();
-  
-  // Step 9: Add event listener to delete button to remove the chapter
-  deleteButton.addEventListener('click', function() {
+// Populate the displayed list of chapters from localStorage
+chaptersArray.forEach(chapter => {
+  displayList(chapter);
+});
+
+// Function to display a chapter in the list
+function displayList(item) {
+  let li = document.createElement('li');
+  let deletebutton = document.createElement('button');
+  li.textContent = item;
+  deletebutton.textContent = '❌';
+  deletebutton.classList.add('delete');
+  li.append(deletebutton);
+  list.append(li);
+  deletebutton.addEventListener('click', function () {
     list.removeChild(li);
+    deleteChapter(li.textContent);
     input.focus();
   });
 }
 
-// Add event listener to the button for click events
-button.addEventListener('click', addChapter);
+// Function to set the localStorage item
+function setChapterList() {
+  localStorage.setItem('myFavBOMList', JSON.stringify(chaptersArray));
+}
+
+// Function to retrieve the localStorage item
+function getChapterList() {
+  return JSON.parse(localStorage.getItem('myFavBOMList'));
+}
+
+// Function to delete a chapter from the array and localStorage
+function deleteChapter(chapter) {
+  chapter = chapter.slice(0, chapter.length - 1);
+  chaptersArray = chaptersArray.filter(item => item !== chapter);
+  setChapterList();
+}
+
+// Button click event listener to add a new chapter
+button.addEventListener('click', () => {
+  if (input.value != '') {
+    displayList(input.value);
+    chaptersArray.push(input.value);
+    setChapterList();
+    input.value = '';
+    input.focus();
+  }
+});
 
 // Allow pressing Enter key in the input field to add a chapter
 input.addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
-    addChapter();
+    if (input.value != '') {
+      displayList(input.value);
+      chaptersArray.push(input.value);
+      setChapterList();
+      input.value = '';
+      input.focus();
+    }
   }
 });
