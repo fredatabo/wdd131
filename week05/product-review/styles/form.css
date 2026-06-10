@@ -44,7 +44,6 @@
     --radius-lg: 1.25rem;
     --radius-xl: 2rem;
     --radius-full: 3rem;
-    --radius-pill: 9999px;
     
     /* Typography */
     --font-family-base: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
@@ -76,9 +75,6 @@
     /* Input */
     --input-border-width: 1.5px;
     --input-padding: 0.8rem var(--spacing-lg);
-    
-    /* Breakpoints */
-    --breakpoint-mobile: 700px;
 }
 
 * {
@@ -108,9 +104,8 @@ body {
     transition: all var(--transition-normal);
 }
 
-/* Header styling */
-.form-header,
-.confirmation-header {
+/* Header styling - semantic header element */
+.main-header {
     background: var(--color-primary-dark);
     background-image: var(--header-gradient);
     padding: var(--spacing-2xl) var(--spacing-2xl) 1.8rem;
@@ -118,16 +113,14 @@ body {
     text-align: center;
 }
 
-.form-header h1,
-.confirmation-header h1 {
+.main-header h1 {
     font-size: var(--font-size-3xl);
     font-weight: 600;
     letter-spacing: -0.3px;
     margin-bottom: var(--spacing-sm);
 }
 
-.form-header p,
-.confirmation-header p {
+.main-header p {
     font-size: var(--font-size-lg);
     opacity: 0.85;
     max-width: 500px;
@@ -384,8 +377,8 @@ textarea {
     transform: translateX(-3px);
 }
 
-/* Footer common style */
-.assignment-footer {
+/* Footer common style - semantic footer element */
+.main-footer {
     background: var(--color-bg-footer);
     border-top: 1px solid var(--color-border-medium);
     text-align: center;
@@ -394,7 +387,7 @@ textarea {
     color: var(--color-text-secondary);
 }
 
-.assignment-footer p {
+.main-footer p {
     margin: 0.2rem 0;
 }
 
@@ -423,8 +416,7 @@ textarea {
         justify-content: center;
     }
     
-    .form-header h1,
-    .confirmation-header h1 {
+    .main-header h1 {
         font-size: var(--font-size-2xl);
     }
     
@@ -442,6 +434,13 @@ textarea {
 .req-hint {
     font-size: var(--font-size-xs);
     color: var(--color-accent-red);
+    margin-top: var(--spacing-xs);
+    display: inline-block;
+}
+
+.hint-text {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
     margin-top: var(--spacing-xs);
     display: inline-block;
 }

@@ -12,7 +12,7 @@ const products = [
     { id: "prd_105", name: "SmartFit Fitness Tracker 2.0" }
 ];
 
-// Useful features list for checkboxes
+// Useful features list for checkboxes (at least 4 features)
 const usefulFeaturesList = [
     { id: "feature_easy", name: "Easy to install", value: "Easy installation" },
     { id: "feature_performance", name: "Great performance", value: "Great performance" },
@@ -25,10 +25,14 @@ const usefulFeaturesList = [
  * Populate product select dropdown
  * - First option is disabled instructional placeholder
  * - Each option value = product name (per spec)
+ * - Ensures select element has child options before validation
  */
 function populateProductSelect() {
     const productSelect = document.getElementById('productSelect');
     if (!productSelect) return;
+
+    // Clear any existing options
+    productSelect.innerHTML = '';
 
     // Create placeholder option (disabled, selected by default)
     const placeholderOption = document.createElement('option');
@@ -50,10 +54,14 @@ function populateProductSelect() {
 /**
  * Create rating stars (radio buttons 1-5)
  * All radio buttons share the same name attribute for proper grouping
+ * Creates exactly 5 radio input elements
  */
 function createRatingStars() {
     const ratingContainer = document.getElementById('ratingStarsContainer');
     if (!ratingContainer) return;
+
+    // Clear any existing content
+    ratingContainer.innerHTML = '';
 
     for (let i = 1; i <= 5; i++) {
         const starWrapper = document.createElement('div');
@@ -81,10 +89,14 @@ function createRatingStars() {
 
 /**
  * Create useful features checkboxes dynamically
+ * Creates at least 4 checkbox elements as required
  */
 function createFeatureCheckboxes() {
     const featuresContainer = document.getElementById('featuresGroup');
     if (!featuresContainer) return;
+
+    // Clear any existing content
+    featuresContainer.innerHTML = '';
 
     usefulFeaturesList.forEach(feature => {
         const div = document.createElement('div');

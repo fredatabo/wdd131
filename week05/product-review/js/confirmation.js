@@ -58,6 +58,19 @@ function formatRatingStars(rating) {
 }
 
 /**
+ * Escape HTML to prevent XSS
+ */
+function escapeHtml(str) {
+    if (!str) return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+/**
  * Display the submitted review data on the confirmation page
  */
 function displayReviewSummary() {
@@ -83,7 +96,7 @@ function displayReviewSummary() {
     // Format features list
     let featuresHtml = '<em>None selected</em>';
     if (params.features && params.features.length > 0) {
-        featuresHtml = params.features.map(f => `✓ ${f}`).join('<br>');
+        featuresHtml = params.features.map(f => '✓ ' + escapeHtml(f)).join('<br>');
     }
 
     // Build the summary HTML
@@ -101,7 +114,7 @@ function displayReviewSummary() {
             
             <div class="summary-item">
                 <span class="summary-label">Product:</span>
-                <span class="summary-value">${escapeHtml(params.productName || '—')}</span>
+                <span class="summary-value">${escapeHtml(params.productName) || '—'}</span>
             </div>
             
             <div class="summary-item">
@@ -111,7 +124,7 @@ function displayReviewSummary() {
             
             <div class="summary-item">
                 <span class="summary-label">Installation Date:</span>
-                <span class="summary-value">${escapeHtml(params.installDate || '—')}</span>
+                <span class="summary-value">${escapeHtml(params.installDate) || '—'}</span>
             </div>
             
             <div class="summary-item">
@@ -134,19 +147,6 @@ function displayReviewSummary() {
             <a href="form.html" class="back-link">← Write another review</a>
         </div>
     `;
-}
-
-/**
- * Simple XSS prevention helper
- */
-function escapeHtml(str) {
-    if (!str) return '';
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;');
 }
 
 // Initialize confirmation page when DOM is ready
