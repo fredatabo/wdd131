@@ -1,9 +1,9 @@
 /**
  * Product Review Form - Dynamic functionality
- * Populates product select, rating stars, and feature checkboxes
+ * Enhances existing static form elements
  */
 
-// Product data array (provided in assignment)
+// Product data array (provided in assignment) - can be used to update if needed
 const products = [
     { id: "prd_101", name: "EcoSmart Bluetooth Speaker" },
     { id: "prd_102", name: "FlexStand Ergonomic Laptop Stand" },
@@ -12,109 +12,25 @@ const products = [
     { id: "prd_105", name: "SmartFit Fitness Tracker 2.0" }
 ];
 
-// Useful features list for checkboxes (at least 4 features)
-const usefulFeaturesList = [
-    { id: "feature_easy", name: "Easy to install", value: "Easy installation" },
-    { id: "feature_performance", name: "Great performance", value: "Great performance" },
-    { id: "feature_battery", name: "Long battery life", value: "Long battery life" },
-    { id: "feature_design", name: "Sleek design", value: "Sleek design" },
-    { id: "feature_value", name: "Good value for money", value: "Good value" }
-];
-
 /**
- * Populate product select dropdown
- * - First option is disabled instructional placeholder
- * - Each option value = product name (per spec)
- * - Ensures select element has child options before validation
+ * Update the star emoji display to show proper stars based on rating
  */
-function populateProductSelect() {
-    const productSelect = document.getElementById('productSelect');
-    if (!productSelect) return;
-
-    // Clear any existing options
-    productSelect.innerHTML = '';
-
-    // Create placeholder option (disabled, selected by default)
-    const placeholderOption = document.createElement('option');
-    placeholderOption.value = "";
-    placeholderOption.textContent = "Select a Product ...";
-    placeholderOption.disabled = true;
-    placeholderOption.selected = true;
-    productSelect.appendChild(placeholderOption);
-
-    // Populate products from array
-    products.forEach(product => {
-        const option = document.createElement('option');
-        option.value = product.name;  // Value attribute = product name
-        option.textContent = product.name;
-        productSelect.appendChild(option);
-    });
-}
-
-/**
- * Create rating stars (radio buttons 1-5)
- * All radio buttons share the same name attribute for proper grouping
- * Creates exactly 5 radio input elements
- */
-function createRatingStars() {
-    const ratingContainer = document.getElementById('ratingStarsContainer');
-    if (!ratingContainer) return;
-
-    // Clear any existing content
-    ratingContainer.innerHTML = '';
-
-    for (let i = 1; i <= 5; i++) {
-        const starWrapper = document.createElement('div');
-        starWrapper.className = 'star-option';
-
-        const radioId = `rating_${i}`;
-        const radioInput = document.createElement('input');
-        radioInput.type = 'radio';
-        radioInput.name = 'overallRating';  // Same name for all = proper radio group
-        radioInput.value = i;
-        radioInput.id = radioId;
-        radioInput.required = true;
-
-        const starLabel = document.createElement('label');
-        starLabel.htmlFor = radioId;
-        const filledStars = '★'.repeat(i);
-        const emptyStars = '☆'.repeat(5 - i);
-        starLabel.innerHTML = `<span class="star-emoji">${filledStars}${emptyStars}</span> <span>${i}</span>`;
-
-        starWrapper.appendChild(radioInput);
-        starWrapper.appendChild(starLabel);
-        ratingContainer.appendChild(starWrapper);
-    }
-}
-
-/**
- * Create useful features checkboxes dynamically
- * Creates at least 4 checkbox elements as required
- */
-function createFeatureCheckboxes() {
-    const featuresContainer = document.getElementById('featuresGroup');
-    if (!featuresContainer) return;
-
-    // Clear any existing content
-    featuresContainer.innerHTML = '';
-
-    usefulFeaturesList.forEach(feature => {
-        const div = document.createElement('div');
-        div.className = 'checkbox-item';
-
-        const cb = document.createElement('input');
-        cb.type = 'checkbox';
-        cb.id = feature.id;
-        cb.name = `feature_${feature.id}`;
-        cb.value = feature.value;
-
-        const label = document.createElement('label');
-        label.htmlFor = feature.id;
-        label.textContent = feature.name;
-
-        div.appendChild(cb);
-        div.appendChild(label);
-        featuresContainer.appendChild(div);
+function updateStarDisplay() {
+    const radioButtons = document.querySelectorAll('input[name="overallRating"]');
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+            const value = parseInt(this.value, 10);
+            // Update all star displays to match the selected rating
+            radioButtons.forEach((r, idx) => {
+                const ratingValue = idx + 1;
+                const label = r.nextElementSibling;
+                if (label && label.querySelector('.star-emoji')) {
+                    const filledStars = '★'.repeat(ratingValue);
+                    const emptyStars = '☆'.repeat(5 - ratingValue);
+                    label.querySelector('.star-emoji').textContent = ratingValue <= value ? filledStars + emptyStars : '☆☆☆☆☆';
+                }
+            });
+        });
     });
 }
 
@@ -130,13 +46,40 @@ function setDateRestrictions() {
 }
 
 /**
- * Initialize all form components when DOM is ready
+ * Optional: Sync select options with the products array if needed
+ * (Static HTML already has options, but this ensures consistency)
+ */
+function syncProductOptions() {
+    const productSelect = document.getElementById('productSelect');
+    if (!productSelect) return;
+    
+    // Check if we need to update (optional - keeps static options but ensures data matches)
+    const currentOptions = Array.from(productSelect.options).slice(1).map(opt => opt.value);
+    const productNames = products.map(p => p.name);
+    
+    // Only update if there's a mismatch
+    if (JSON.stringify(currentOptions) !== JSON.stringify(productNames)) {
+        // Clear existing options except the placeholder
+        while (productSelect.options.length > 1) {
+            productSelect.remove(1);
+        }
+        // Add updated options
+        products.forEach(product => {
+            const option = document.createElement('option');
+            option.value = product.name;
+            option.textContent = product.name;
+            productSelect.appendChild(option);
+        });
+    }
+}
+
+/**
+ * Initialize all form enhancements when DOM is ready
  */
 function initForm() {
-    populateProductSelect();
-    createRatingStars();
-    createFeatureCheckboxes();
     setDateRestrictions();
+    updateStarDisplay();
+    syncProductOptions(); // Optional: ensures product list matches array
 }
 
 // Start everything when page loads

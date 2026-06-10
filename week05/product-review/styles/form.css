@@ -36,7 +36,6 @@
     --spacing-lg: 1rem;
     --spacing-xl: 1.5rem;
     --spacing-2xl: 2rem;
-    --spacing-3xl: 2.5rem;
     
     /* Border Radius */
     --radius-sm: 0.5rem;
@@ -445,9 +444,8 @@ textarea {
     display: inline-block;
 }
 
-hr {
-    margin: var(--spacing-sm) 0 var(--spacing-lg);
-    border: 0;
-    height: 1px;
-    background: var(--color-border-light);
+/* Selected radio star styling */
+.star-option input:checked + label .star-emoji {
+    color: var(--color-accent-gold);
+    text-shadow: 0 0 2px rgba(245, 176, 66, 0.5);
 }
