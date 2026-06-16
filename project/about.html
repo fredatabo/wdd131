@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MoneyLens | About & Help</title>
+    <meta name="description" content="Learn about MoneyLens Personal Budget Tracker, how to use it effectively, and get tips for better financial management.">
+    <meta name="author" content="Frederick Atabo - WDD 131 Project">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-icon">💰</div>
+                <div class="site-name">MoneyLens</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <main class="budget-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>ℹ️ About MoneyLens</h1>
+            <p>Your personal budget tracker for smarter financial decisions</p>
+        </div>
+
+        <!-- About Content Grid -->
+        <div class="about-grid">
+            <!-- Mission Section -->
+            <div class="card about-card">
+                <div class="about-icon">🎯</div>
+                <h2>Our Mission</h2>
+                <p>MoneyLens was created to help individuals take control of their personal finances through simple, intuitive, and real-time budget tracking. We believe that everyone deserves clarity about their spending habits and the tools to make better financial decisions.</p>
+            </div>
+
+            <!-- Features Section -->
+            <div class="card about-card">
+                <div class="about-icon">⚡</div>
+                <h2>Key Features</h2>
+                <ul class="features-list">
+                    <li>✓ Real-time balance updates</li>
+                    <li>✓ Income and expense tracking</li>
+                    <li>✓ Category-based spending analysis</li>
+                    <li>✓ Interactive expense charts</li>
+                    <li>✓ Transaction history with filters</li>
+                    <li>✓ Automatic data persistence (localStorage)</li>
+                </ul>
+            </div>
+
+            <!-- How To Use -->
+            <div class="card about-card">
+                <div class="about-icon">📖</div>
+                <h2>How to Use</h2>
+                <ol class="steps-list">
+                    <li><strong>Add Transactions:</strong> Use the form on the Dashboard to add income or expenses.</li>
+                    <li><strong>View Insights:</strong> Check the expense chart and category breakdown.</li>
+                    <li><strong>Manage History:</strong> Visit the Transactions page to filter and delete entries.</li>
+                    <li><strong>Track Progress:</strong> Your balance updates automatically with every change.</li>
+                </ol>
+            </div>
+
+            <!-- Tips Section with image (lazy loaded) -->
+            <div class="card about-card">
+                <div class="about-icon">💡</div>
+                <h2>Financial Tips</h2>
+                <img src="https://placehold.co/400x200/3B82F6/white?text=Budgeting+Tips" alt="Budgeting tips illustration" class="tips-image" loading="lazy">
+                <ul class="tips-list">
+                    <li>📌 Follow the 50/30/20 rule (Needs/Wants/Savings)</li>
+                    <li>📌 Track every expense, no matter how small</li>
+                    <li>📌 Review your budget weekly</li>
+                    <li>📌 Set realistic savings goals</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Form Section (HTML Form requirement) -->
+        <div class="card contact-card">
+            <h2>📧 Contact Us</h2>
+            <p>Have questions or feedback? Send us a message!</p>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactName">Name *</label>
+                        <input type="text" id="contactName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email *</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject *</label>
+                    <input type="text" id="contactSubject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message *</label>
+                    <textarea id="contactMessage" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>MoneyLens • Real-time budget tracker • Take control of your finances</p>
+        <p>© 2026 Personal Budget Tracker — All rights reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

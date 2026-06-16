@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MoneyLens | Transaction History</title>
+    <meta name="description" content="View and manage all your transactions. Edit, delete, and filter your income and expense entries.">
+    <meta name="author" content="Frederick Atabo - WDD 131 Project">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-icon">💰</div>
+                <div class="site-name">MoneyLens</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="transactions.html" class="active">Transactions</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <main class="budget-container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>📋 Transaction History</h1>
+            <p>View, filter, and manage all your financial transactions</p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-card">
+            <h3>🔍 Filter Transactions</h3>
+            <div class="filter-row">
+                <div class="form-group">
+                    <label for="filterType">Transaction Type</label>
+                    <select id="filterType">
+                        <option value="all">All Transactions</option>
+                        <option value="income">Income Only</option>
+                        <option value="expense">Expenses Only</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="filterCategory">Category</label>
+                    <select id="filterCategory">
+                        <option value="all">All Categories</option>
+                        <option value="Food">🍔 Food</option>
+                        <option value="Transport">🚗 Transport</option>
+                        <option value="Utilities">⚡ Utilities</option>
+                        <option value="Entertainment">🎬 Entertainment</option>
+                        <option value="Other">📦 Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button id="resetFiltersBtn" class="btn btn-secondary">Reset Filters</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Summary -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-label">Total Income</div>
+                <div class="stat-value income-text" id="pageTotalIncome">$0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Expenses</div>
+                <div class="stat-value expense-text" id="pageTotalExpense">$0.00</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Net Balance</div>
+                <div class="stat-value" id="pageNetBalance">$0.00</div>
+            </div>
+        </div>
+
+        <!-- Transactions Table -->
+        <div class="card transactions-table-container">
+            <div class="table-header">
+                <h3>All Transactions</h3>
+                <button id="clearAllBtn" class="btn btn-danger btn-small">Clear All</button>
+            </div>
+            <div class="table-responsive">
+                <table class="transactions-table">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsTableBody">
+                        <tr>
+                            <td colspan="5" class="empty-table">Loading transactions...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Quick Add Link Back to Dashboard -->
+        <div style="text-align: center; margin-top: 1.5rem;">
+            <a href="index.html" style="color: #3B82F6; text-decoration: none; font-weight: 600;">➕ Add New Transaction →</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>MoneyLens • Real-time budget tracker • Take control of your finances</p>
+        <p>© 2026 Personal Budget Tracker — All rights reserved</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+  console.log("Raw storage:", localStorage.getItem("moneylens_transactions"));
+</script>
+</body>
+</html>
